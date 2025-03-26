@@ -4,10 +4,10 @@ serverName = '192.168.0.116'
 serverPort = 12000
 
 clientSocket = socket(AF_INET, SOCK_DGRAM)
-message = input("Input lowercase sentence: ")
+message = input("Nhập câu viết thường:")
 clientSocket.sendto(message.encode(), (serverName, serverPort))
 
 modifiedMessage, serverAddress = clientSocket.recvfrom(2048)
-print("From Server:", modifiedMessage.decode())
+print("Từ Máy chủ:", modifiedMessage.decode())
 
 clientSocket.close()
